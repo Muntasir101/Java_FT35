@@ -1,0 +1,6 @@
+Generate Code Coverage:
+  mvn clean verify -Dtest=LoginServiceTest
+
+it will:
+Run only LoginServiceTest
+Generate Jacoco HTML report at target/site/jacoco/index.html
