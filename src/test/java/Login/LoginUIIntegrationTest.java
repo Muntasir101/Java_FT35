@@ -27,12 +27,26 @@ public class LoginUIIntegrationTest {
     }
 
     @Test
-    public void testFailedLoginUI() throws Exception {
+    public void testFailedLoginUIWrongUserName() throws Exception {
         LoginService service = new LoginService();
         LoginUI ui = new LoginUI(service);
 
         ui.getUsernameField().setText("wronguser");
-        ui.getPasswordField().setText("wrongpass");
+        ui.getPasswordField().setText("password123");
+
+        SwingUtilities.invokeLater(() -> ui.getLoginButton().doClick());
+
+        Thread.sleep(500);
+
+        assertEquals("Login failed!", ui.getResultLabel().getText());
+    }
+
+    public void testFailedLoginUIWrongPassword() throws Exception {
+        LoginService service = new LoginService();
+        LoginUI ui = new LoginUI(service);
+
+        ui.getUsernameField().setText("admin");
+        ui.getPasswordField().setText("pass");
 
         SwingUtilities.invokeLater(() -> ui.getLoginButton().doClick());
 

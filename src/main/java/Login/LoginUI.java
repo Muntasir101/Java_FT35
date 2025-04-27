@@ -19,7 +19,7 @@ public class LoginUI {
 
     private void createUI() {
         frame = new JFrame("Login");
-        frame.setSize(300, 200);
+        frame.setSize(700, 500);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLayout(null);
 
